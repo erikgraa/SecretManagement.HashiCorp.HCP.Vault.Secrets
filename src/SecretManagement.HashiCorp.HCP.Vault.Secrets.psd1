@@ -7,7 +7,7 @@
 #
 
 @{
-    ModuleVersion = '0.2505.1'
+    ModuleVersion = '0.2505.2'
     CompatiblePSEditions = @('Core', 'Desktop')
     GUID = '94214630-d2e7-4a06-8b47-e7302dd8c69b'
     Author = 'erikgraa'

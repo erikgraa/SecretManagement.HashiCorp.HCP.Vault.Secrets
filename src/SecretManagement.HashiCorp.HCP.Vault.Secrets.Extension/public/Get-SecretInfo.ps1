@@ -12,7 +12,7 @@ function Get-SecretInfo {
 
             $secret = (Invoke-RestMethod -Uri $uri -Method Get -Headers $script:authorizationHeader).secrets
 
-            if (-not([string]::IsNullOrEmpty($Filter))) {
+            if ($Filter -ne '*') {
                 $secret = $secret | Where-Object { $_.Name -match $Filter }
             }
 

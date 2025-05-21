@@ -19,7 +19,16 @@ function Request-SecretVaultAccessToken {
         }
 
         if ($null -eq $clientId -or $null -eq $clientSecret) {
-            Write-Error 'A HCP Client ID and HCP Client Secret must be available as environment variables to authenticate with HashiCorp Cloud Platform'
+            if ($PSVersionTable.PSVersion -ge [version]'7.4') {
+                $clientId = Read-Host -Prompt 'Enter the HCP client ID'
+                $clientSecret = Read-Host -Prompt 'Enter the HCP client secret' -MaskInput
+            }
+            else {
+                $credential = Get-Credential -Message 'Enter first the HCP client ID and then the HCP client secret'
+
+                $clientId = $credential.UserName
+                $clientSecret = $credential.GetNetworkCredential().Password
+            }
         }
 
         $body = @{
