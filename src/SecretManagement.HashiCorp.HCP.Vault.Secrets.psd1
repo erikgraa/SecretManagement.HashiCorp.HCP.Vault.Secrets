@@ -28,7 +28,6 @@
 
             ProjectUri     = 'https://github.com/erikgraa/SecretManagement.HashiCorp.HCP.Vault.Secrets'
             License        = 'https://github.com/erikgraa/SecretManagement.HashiCorp.HCP.Vault.Secrets/blob/main/LICENSE'
-            IconUri        = 'https://raw.githubusercontent.com/erikgraa/SecretManagement.HashiCorp.HCP.Vault.Secrets/refs/heads/main/images/logo.png'
             ReleaseNotes   = 'https://github.com/erikgraa/SecretManagement.HashiCorp.HCP.Vault.Secrets'
         }
     }
