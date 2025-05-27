@@ -37,9 +37,10 @@ Install-Module -Name SecretManagement.HashiCorp.HCP.Vault.Secrets -AllowClobber
 ### Register vault
 
 The following are required:
+* A vault name (typically one would choose the same as the HCP Vault Secrets App Name)
 * HCP Organization ID
 * HCP Project ID
-* HCP Vault Secrets App Name Vault name
+* HCP Vault Secrets App Name
 
 To access secrets in the vault after registering one needs an IAM service principal's client ID and client secret.
 
@@ -91,6 +92,30 @@ Retrieve a secret by specifying the secret name:
 
 ```powershell
 Get-Secret -Vault 'HCP-Secrets-App' -Name 'secret'
+```
+
+### Set secret
+
+Set a secret by specifying the secret name and its value - as a SecureString (preferred) or plaintext:
+
+```powershell
+$secret = Read-Host -Prompt 'Secret value' -AsSecureString
+
+Set-Secret -Vault 'HCP-Secrets-App' -Name 'secret' -Secret $secret
+```
+
+Or plaintext:
+
+```powershell
+Set-Secret -Vault 'HCP-Secrets-App' -Name 'secret' -Secret 'secret value'
+```
+
+### Remove secret
+
+Remove a secret by specifying the secret name:
+
+```powershell
+Remove-Secret -Vault 'HCP-Secrets-App' -Name 'secret'
 ```
 
 ## 🙌 Contributing
