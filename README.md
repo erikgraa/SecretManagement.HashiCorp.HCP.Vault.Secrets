@@ -6,6 +6,9 @@
 
 > This PowerShell module is a Microsoft.PowerShell.SecretManagement extension for HashiCorp HCP Vault Secrets available in [the PowerShell Gallery](https://www.powershellgallery.com/packages/SecretManagement.HashiCorp.HCP.Vault.Secrets).
 
+> [!IMPORTANT]
+> HashiCorp HCP Vault Secrets will no longer be available as of [August 27 2025](https://support.hashicorp.com/hc/en-us/articles/41802449287955-HCP-Vault-Secrets-End-Of-Life), as such this repository and project is archived
+
 > [!TIP]  
 > Read the related blog post at https://blog.graa.dev/Vault-LAPS
 
